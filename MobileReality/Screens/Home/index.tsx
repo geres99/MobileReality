@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react-native/no-inline-styles */
 import {useNavigation} from '@react-navigation/native';
 import {Dimensions, Image, ScrollView, Text, View} from 'react-native';
 import Button from '../../Components/Button';
@@ -5,7 +7,7 @@ import Button from '../../Components/Button';
 const {width} = Dimensions.get('window');
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
 
   return (
     <ScrollView>
@@ -16,11 +18,11 @@ const HomeScreen = () => {
           alignItems: 'center',
           paddingHorizontal: 32,
         }}>
-        <Text style={{fontSize: 32, fontWeight: 800}}>Kilka słow o nas</Text>
+        <Text style={{fontSize: 32, fontWeight: '800'}}>Kilka słow o nas</Text>
         <Text
           style={{
             fontSize: 16,
-            fontWeight: 600,
+            fontWeight: '600',
             color: 'blue',
             paddingBottom: 32,
           }}>
@@ -64,11 +66,11 @@ const HomeScreen = () => {
           alignItems: 'center',
           paddingHorizontal: 32,
         }}>
-        <Text style={{fontSize: 32, fontWeight: 800}}>Kilka słow o nas</Text>
+        <Text style={{fontSize: 32, fontWeight: '800'}}>Kilka słow o nas</Text>
         <Text
           style={{
             fontSize: 16,
-            fontWeight: 600,
+            fontWeight: '600',
             color: 'blue',
             paddingBottom: 32,
           }}>

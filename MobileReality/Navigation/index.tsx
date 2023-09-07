@@ -3,6 +3,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {View} from 'react-native';
 import HomeScreen from '../Screens/Home';
 import DetailsScreen from '../Screens/Details';
+import ComponentDetailsScreen from '../Screens/ComponentDetails';
+import CreateNewScreen from '../Screens/CreateNew';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +24,11 @@ const MainNavigation = () => {
             options={{headerShown: false}}
           />
           <Stack.Screen name="details" component={DetailsScreen} />
+          <Stack.Screen
+            name="componentDetails"
+            component={ComponentDetailsScreen}
+          />
+          <Stack.Screen name="createNew" component={CreateNewScreen} />
         </Stack.Group>
       </Stack.Navigator>
     </View>
