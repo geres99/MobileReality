@@ -8,10 +8,12 @@ import {deletePostsRequest} from '../../api/requests/deletePost';
 import {useNavigation} from '@react-navigation/native';
 import {getPostRequest} from '../../api/requests/getPost';
 import {PostType} from '../../api/requests/getPosts';
+import {useUserContext} from '../../context';
 
 const {width} = Dimensions.get('window');
 
 const ComponentDetailsScreen: FC<any> = props => {
+  const {setPosts} = useUserContext();
   const {id} = props.route.params;
   const [details, setDetails] = useState<PostType>();
   useEffect(() => {
@@ -50,6 +52,7 @@ const ComponentDetailsScreen: FC<any> = props => {
             title="Usuń"
             onPress={() => {
               deletePostsRequest(id);
+              setPosts(prev => prev.filter(item => item.id !== id));
               navigation.goBack();
             }}
           />

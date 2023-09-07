@@ -2,14 +2,6 @@
   "posts": [
     {
       "data": {
-        "title": "TestTest",
-        "description": "123"
-      },
-      "createdAt": "2023-09-07T16:04:13.520Z",
-      "id": 1
-    },
-    {
-      "data": {
         "title": "1234",
         "description": "4321"
       },
@@ -17,10 +9,10 @@
       "id": 2
     },
     {
-      "title": "Aaa",
-      "description": "Bbb",
-      "createdAt": "2023-09-07T16:06:00.001Z",
-      "id": 3
+      "title": "Tytuł",
+      "description": "Opis",
+      "createdAt": "2023-09-07T16:18:19.148Z",
+      "id": 6
     }
   ]
 }

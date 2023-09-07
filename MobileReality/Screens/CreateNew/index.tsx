@@ -5,8 +5,10 @@ import {FC, useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
 import {addPostRequest} from '../../api/requests/addPost';
 import Button from '../../Components/Button';
+import {useUserContext} from '../../context';
 
 const CreateNewScreen: FC = () => {
+  const {setPosts} = useUserContext();
   const [titleInput, setTitleInput] = useState('');
   const [descriptionInput, setDescriptionInput] = useState('');
   const navigation = useNavigation();
@@ -62,8 +64,13 @@ const CreateNewScreen: FC = () => {
         }}>
         <Button
           title="Dodaj"
-          onPress={() => {
-            addPostRequest({title: titleInput, description: descriptionInput});
+          onPress={async () => {
+            const response = await addPostRequest({
+              title: titleInput,
+              description: descriptionInput,
+            });
+            console.log(response.data);
+            setPosts(prev => [...prev, {...response.data}]);
             navigation.goBack();
           }}
         />

@@ -10,6 +10,7 @@ import React from 'react';
 import {SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import MainNavigation from './Navigation';
+import UserContextWrapper from './context/userContextWrapper';
 
 function App(): JSX.Element {
   const backgroundStyle = {
@@ -19,9 +20,11 @@ function App(): JSX.Element {
 
   const AppContainer = () => {
     return (
-      <SafeAreaView style={backgroundStyle}>
-        <MainNavigation />
-      </SafeAreaView>
+      <UserContextWrapper>
+        <SafeAreaView style={backgroundStyle}>
+          <MainNavigation />
+        </SafeAreaView>
+      </UserContextWrapper>
     );
   };
 
